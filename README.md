@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
-    <img alt="o-family" src="assets/logo-light.svg" width="305">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-animated-dark.svg">
+    <img alt="o-family" src="assets/logo-animated-light.svg" width="360">
   </picture>
   <br>
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/github/license/ofamtools/o-family"></a>
