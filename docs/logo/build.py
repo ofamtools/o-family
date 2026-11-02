@@ -2,8 +2,8 @@
 """Write the o family's logo set: assets/icon.svg, assets/logo-light.svg and
 assets/logo-dark.svg.
 
-The mark is the ekiben (concept fam-9 in ~/hub/o-plans/icons/build.py): a
-real bento box whose compartments are not all the same shape or size. Rice
+The mark is the ekiben: a real bento box whose compartments are not all the
+same shape or size. Rice
 with an umeboshi takes the big compartment; a wide strip, a tall pickle slot,
 a square of tamagoyaki, a round cup and a side dish take the rest. Each
 compartment is one member's hue (ochazuke green, o-ai indigo, o-proj teal,

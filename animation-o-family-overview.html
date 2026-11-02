@@ -162,8 +162,8 @@ body{display:grid;place-items:center}
 </div>
 <script>
 // ── config ────────────────────────────────────────────────────────────────
-// The o family overview: prose quoted from ~/hub/o-plans/roadmap.md, the
-// family READMEs and AGENTS.md files (cuts marked …); output from ~/bin/o,
+// The o family overview: layer descriptions, family READMEs and
+// AGENTS.md files (cuts marked …); output from ~/bin/o,
 // mtm (throwaway database) and the CSV example (home shortened to ~).
 const SHOW_CONFIG = {
   modelLabel: "o family",
@@ -204,13 +204,13 @@ const MTM_SMOKE = [
 const CHAPTERS = [
 {
   title: "Three layers",
-  src: "~/hub/o-plans/roadmap.md \"Layers\" (from plans/cli-extensions.md)",
+  src: "o-family README.md · family layers",
   beats: [{ type: "thread", messages: [
     { who: "you", text: "how do the pieces fit together?" },
     { who: "model", text: [
       "In layers, each importing only the one below it.",
       "oden turns [[argv into a command]]; `ochazuke/cli` turns [[a command into a request]] the runtime runs; mtm is the slice, and mounts both.",
-    ], code: { glow: ["\"oden\"", "\"ochazuke/cli\"", "\"mtm\""], blocks: [{ label: "roadmap.md · Layers (owns/imports trimmed)", lines: [
+    ], code: { glow: ["\"oden\"", "\"ochazuke/cli\"", "\"mtm\""], blocks: [{ label: "Family layers · ownership and imports", lines: [
       "layers = [",
       "  { name: \"oden\",          job: \"argv -> command\",",
       "    owns: \"mtm-<sub> on PATH, resolve by name/alias/prefix, …\",",

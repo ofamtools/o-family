@@ -47,11 +47,11 @@ extensions   o-ai  o-inventory  o-proj  o-md  o-qbt  ...
 - **Hosts.** matomeru (`mtm`) and nabe are ochazuke apps that mount other tools. `mtm <sub>` and `o <sub>` find `mtm-<sub>` and `o-<sub>` bins on PATH.
 - **Extensions.** Every `o-*` tool answers `BIN catalog` with the JSON `ochazuke/cli.Catalog` writes; a host reads it and shows the tool's nouns as pages, its verbs as keys and palette commands. o-inventory reads the same catalogs to snapshot the whole family.
 
-Plans, todos and the roadmap for the family live outside these repositories, in the hub's `o-plans`.
+Plans, todos and the roadmap for the family are maintained separately from these repositories.
 
 ## The `o family` command (moved)
 
-This repository used to hold the family's repository status report. It moved into **o proj** (ofam.dev/o-proj, `~/proj/o-proj`): `o proj status [DIR...] [-d|--dirty] [-c|--clean] [-j|--json]`, over the repositories in o proj's manifest (`~/hub/repos.json`).
+This repository used to hold the family's repository status report. It moved into **o proj** (ofam.dev/o-proj, `~/proj/o-proj`): `o proj status [DIR...] [-d|--dirty] [-c|--clean] [-j|--json]`, over the repositories in o proj's manifest (`$HOME/hub/repos.json`).
 
 `o family` still works: it prints one deprecation line on stderr and runs `o proj status` with the same arguments (`o family repos` runs `o proj status --json`), with o-proj's exit code. The old `-r/--repos` and `-u/--hub` flags are gone; discovery is the manifest. It also answers `catalog` (schema 1, no nouns), so family tooling still reads it.
 
