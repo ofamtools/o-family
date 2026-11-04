@@ -9,7 +9,7 @@
 
 <p align="center">The o family: Go tools and libraries for a terminal workspace of agents, built from declared data.</p>
 
-The names are Japanese food and craft words, most with the honorific お (o-): ochazuke (tea over rice), oden (a hotpot of skewered ingredients), matomeru (to gather, as a furoshiki bundles), nabe (a hotpot). The `o` root bin runs every `o-*` tool on PATH: `o proj`, `o ai`, `o inv`.
+The names are Japanese food and craft words, most with the honorific お (o-): ochazuke (tea over rice), oden (a hotpot of skewered ingredients), and matomeru (to gather, as a furoshiki bundles). The `o` root bin runs every `o-*` tool on PATH: `o proj`, `o ai`, `o inv`.
 
 ## Members
 
@@ -18,7 +18,6 @@ The names are Japanese food and craft words, most with the honorific お (o-): o
 | <img alt="" src="https://raw.githubusercontent.com/ofamtools/ochazuke/main/assets/icon-animated.svg" width="64"> | [ochazuke](https://github.com/ofamtools/ochazuke) | A Go TUI framework on Bubble Tea v2 where nouns, verbs and keybindings are data, so every action in an app is also a command you can run from the shell. |
 | <img alt="" src="https://raw.githubusercontent.com/ofamtools/oden/main/assets/icon-animated.svg" width="64"> | [oden](https://github.com/ofamtools/oden) | The lowest layer for subcommand CLIs in Go: a bin's inline commands merged with executables on PATH, resolved by prefix. Standard library only. |
 | <img alt="" src="https://raw.githubusercontent.com/ofamtools/matomeru/main/assets/icon-animated.svg" width="64"> | [matomeru](https://github.com/ofamtools/matomeru) (`mtm`) | A terminal workspace for coding agents: projects, tasks, notes, live agent panes, their turns and your reviews, in one TUI. |
-| <img alt="" src="assets/icon.svg" width="64"> | [nabe](https://github.com/ofamtools/nabe) | A host for ochazuke extensions (`o nabe`, `o tui`): any executable that answers `catalog` becomes a page. |
 | <img alt="" src="https://raw.githubusercontent.com/ofamtools/o-ai/main/assets/icon-animated.svg" width="64"> | [o-ai](https://github.com/ofamtools/o-ai) | The local AI harnesses and their providers, models, skills, agents and settings, inspected without making a model request. |
 | <img alt="" src="https://raw.githubusercontent.com/ofamtools/o-inventory/main/assets/icon.svg" width="64"> | [o-inventory](https://github.com/ofamtools/o-inventory) | Snapshots the family's tools, nouns, verbs and bindings over time and renders the changelogs from the diffs. |
 | <img alt="" src="https://raw.githubusercontent.com/ofamtools/o-proj/main/assets/icon.svg" width="64"> | [o-proj](https://github.com/ofamtools/o-proj) | The family's repositories on disk: create, record in one manifest, link from the hub, clone, sync and report status. |
@@ -34,17 +33,16 @@ Tools without a logo of their own carry the family's.
 libraries   oden ─────────────► ochazuke
             CLI dispatch:        nouns, verbs, bindings, modes,
             names on PATH        lists, palette, the CLI shell
-                 │                    │
-hosts       mtm (matomeru)       nabe (o tui)
-            the agent workspace  a page per extension
-                 │                    │
-                 └──────┬─────────────┘
+                                      │
+hosts                              mtm (matomeru)
+                                   the agent workspace
+                                      │
 extensions   o-ai  o-inventory  o-proj  o-md  o-qbt  ...
              each an o-* bin that answers `catalog`
 ```
 
 - **Libraries.** oden resolves a command name to an inline handler or an executable on PATH, so commands are just names and a tool composes them. ochazuke builds on oden: an app declares its nouns, verbs and bindings as data, and the same declarations drive the TUI, the palette and the command line.
-- **Hosts.** matomeru (`mtm`) and nabe are ochazuke apps that mount other tools. `mtm <sub>` and `o <sub>` find `mtm-<sub>` and `o-<sub>` bins on PATH.
+- **Hosts.** matomeru (`mtm`) is an ochazuke app that mounts other tools. `mtm <sub>` finds `mtm-<sub>` and `o-<sub>` bins on PATH, and `o <sub>` finds `o-<sub>` bins.
 - **Extensions.** Every `o-*` tool answers `BIN catalog` with the JSON `ochazuke/cli.Catalog` writes; a host reads it and shows the tool's nouns as pages, its verbs as keys and palette commands. o-inventory reads the same catalogs to snapshot the whole family.
 
 Plans, todos and the roadmap for the family are maintained separately from these repositories.
